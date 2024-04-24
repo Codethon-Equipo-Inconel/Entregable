@@ -22,14 +22,150 @@
     text-decoration: none;
 }
 
-/******************************************************* HEADER ******************************************************/
-
-
 /******************************************************* BODY ******************************************************/
 
 body{ margin: 0; background-color: var(--background); }
 
+/******************************************************* DASHBOARD ******************************************************/
+
+/* @import './app/pages/dashboard/dashboard.component.css'; */
+
+/* margen para las divisiones left y right, las separa del borde y entre ellas */
+.left-dashboard, .dashboard-container .right-dashboard { margin: 1vh 2vw; }
+
+/* gap y alineación para los containers left-right y subcontainers */
+.left-dashboard, .left-dashboard .container,
+.right-dashboard, .right-dashboard .container 
+{
+    gap: 2vh 2vw;
+    justify-content: center;
+    min-height: fit-content;
+}
+
+/* estilos para items del dashboard */
+
+/* IMAGENES */
+
+.img-container { /* el container de las fotos/miniaturas de las apps */
+    display: flex !important; 
+}
+
+.img-container .img-logo-full /* estilos para las fotos/miniaturas de apps */  
+{ 
+    /* dimensiones */
+    height: 100% !important; width: 100% !important; 
+    min-height: 100% !important; min-width: 100% !important;
+
+    object-fit: cover; /* para que no se distorsionen al redimensionarse */
+
+    border-radius: 2vh; /* borde */
+
+    transition: ease-in-out 250ms 50ms;
+}
+
+.dashboard-items-container /* items que contienen otros items */
+{
+    min-width: fit-content; /* dimensiones */
+    border-radius: 2vh; /* borde */
+    padding: 0.5vh 0vw; /* separaciones */
+}
+
+.container .item /* items individuales */
+{
+    height: 10vh; max-width: 100%; /* dimensiones */
+    border-radius: 2vh; /* borde */
+    align-content: space-around; align-self: center; /* alineación */
+}
+
+.section-container{
+    display: grid !important;
+    border: none !important; 
+}
+
+
+.img-nofull{
+    align-self: flex-end;
+    /* dimensiones */
+    height: 100% !important; width: 100% !important; 
+    min-height: 50% !important; min-width: 100% !important;
+    max-height: 100% !important;
+
+    object-fit: cover; /* para que no se distorsionen al redimensionarse */
+
+    border-radius: 2vh; /* borde */
+
+    transition: ease-in-out 50ms 50ms;
+}
+
+/* IZQUIERDA */
+
+.left-dashboard 
+{
+    /* ocupa 2 de 5 columnas */
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    /* propiedades del div izquierdo: tiene 2 columnas */
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.left-dashboard .dashboard-items-container /* items que contienen otros items */ 
+{ 
+    background-color: var(--item-background);
+    padding: 2vh 1vw;
+}
+
+.left-dashboard .container .item /* items individuales */
+{
+    /* este color es temporal, no se tiene que ver ya que va una imagen */
+    background-color: var(--amarillo-main); /* background */
+}
+
+/* DERECHA */
+
+.right-dashboard 
+{
+    /* ocupa 3 de 5 columnas */
+    grid-column-start: 3;
+    grid-column-end: end;
+
+    /* propiedades del div derecho: tiene tres columnas */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.right-dashboard .dashboard-items-container /* items que contienen otros items */
+{
+    background-color: var(--item-background);
+    border: solid var(--item-background) 15px; border-radius: 2vh;
+}
+
+.right-dashboard .container .item /* items individuales */
+{
+    height: 15vh; min-height: fit-content; /* dimensiones */
+    background-color: var(--subitem-background); /* background */
+}
+
+.red-social form{
+    display: grid; grid-template-columns: repeat(1, 3fr);
+    height: fit-content;
+}
+
+
+/* hovers */
+
+.left-dashboard .img-container:hover .img-logo-full{ transform: scale(1.1); }
+.right-dashboard .img-container:hover .img-logo-full{ transform: scale(1.05); }
+
+.left-dashboard .img-container:active .img-logo-full,
+.right-dashboard .img-container:active .img-logo-full
+{ transform: scale(1%); transition: ease-in 50ms 1ms; }
+
+.right-dashboard .img-container:active .img-logo-full{transition: ease-in 100ms 2ms;}
+
+/***************************************************** FIN DASHBOARD **************************************************/
+
+
 /******************************************************* FOOTER ******************************************************/
 
-footer{display: flex; justify-content: center; align-items: center;}
-footer p{color:#ffcd07;font-size: 1.5vh;}
+footer{ display: flex; justify-content: center; align-items: center; }
+footer p{ color:#ffcd07;font-size: 1.5vh; }

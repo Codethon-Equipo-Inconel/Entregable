@@ -1,33 +1,8 @@
-#galeria {
-  display: flex;
-  overflow-x: hidden;
-  width: 100%;
-}
-
-.imagen {
-  flex: 0 0 auto;
-  margin-right: 10px;
-}
-
-.imagen img {
-  width: 200px;
-}
-
-
-body, html {
+section {
   margin: 0;
   padding: 0;
   height: 100%;
   background-color: #090274;
-}
-
-header {
-  background-color: #050135;
-  color: white;
-  padding: 10px;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
 }
 
 .container {
@@ -39,7 +14,7 @@ header {
   text-align: end;
 }
 
-.filter-button {
+.filtro {
   background-color: transparent;
   border: 2px solid #333;
   color: #333;
@@ -48,37 +23,10 @@ header {
   cursor: pointer;
 }
 
-
 h1 {
   margin-left: 40px;
   padding: 0;
   font-size: 30px;
   color: white;
   text-align: center;
-}
-
-.content {
-  padding: 20px;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-.app-icons {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #050135;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.icon {
-  font-size: 24px;
-  color: #e6e6e6;
-  cursor: pointer;
 }
