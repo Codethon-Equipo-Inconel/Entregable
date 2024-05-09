@@ -1,37 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
-    <link rel="stylesheet" href="header.component.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-</head>
-<body>
-    <header class="mobile-header" id="header">
-        <nav>
-            <ul>
-                <li><a href="#" routerLink="dashboard" class="menu-section"><i class="fa-solid fa-house"></i><span>Inicio</span></a></li>
-                <li><a href="#" routerLink="eventos" class="menu-section"><i class="fa-solid fa-calendar"></i><span>Eventos</span></a></li>
-                <li><a href="#" routerLink="recursos" class="menu-section"><i class="fa-solid fa-magnifying-glass"></i><span>Recursos</span></a></li>
-                <li><a href="#" routerLink="mapa" class="menu-section"><i class="fa-solid fa-earth-americas"></i><span>Mapa</span></a></li>
-                <li><a href="#" routerLink="perfil" class="menu-section"><img src="../../../assets/img/mondongo.png" alt="imagen usuario" class="profile-img"><span>Perfil</span></a></li>
-                <li class="logo">
-                    <a href="#" routerLink="dashboard">
-                        <span>
-                            <div class="wrapper">
-                                <svg>
-                                    <text x="50%" y="50%" dy=".35em" text-anchor="middle">
-                                        HowToVLC
-                                    </text>
-                                </svg>
-                            </div>
-                        </span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
-</body>
-</html>
+<header class="header">
+  <div class="container">
+    <div class="btn-menu">
+      <label for="btn-menu">☰</label>
+    </div>
+  </div>
+</header>
+
+<header class="header-mobile">
+  <div class="containerM">
+    <a routerLink="dashboard"><i class="bi bi-house-fill"></i></a>
+    <a routerLink="eventos"><i class="bi bi-calendar"></i></a>
+    <a routerLink="recursos"><i class="bi bi-link-45deg"></i></a>
+    <a routerLink="mapa"><i class="bi bi-map-fill"></i></a>
+    <a routerLink="perfil"><i class="bi bi-person-circle"></i></a>
+  </div>
+</header>
+
+
+<input class="check" type="checkbox" id="btn-menu">
+<header class="container-menu">
+  <div class="cont-menu">
+    <nav>
+      <a routerLink="dashboard">Inicio</a>
+      <a routerLink="eventos">Eventos</a>
+      <a routerLink="recursos">Rescursos</a>
+      <a routerLink="mapa">Mapa</a>
+      <a routerLink="perfil"> Perfil</a>
+    </nav>
+    <label for="btn-menu">✖️</label>
+  </div>
+</header>

@@ -3,12 +3,15 @@
 /******************************************************* COLORES ******************************************************/
 
 :root{ /* ¡¡IMPORTANTE!! Variables para los colores, usar estas y añadir colores aquí */
-    --background : #0A0E3F;
-    --item-background : #39336a;
-    --subitem-background : #1e1c50;
+    --background : #080735;
+    --item-background-semitransparent : hsla(258, 48%, 19%, 0.6);
+    --item-background : #271948;
+    --subitem-background : #271948a1;
 
-    --amarillo-main : #ffcd07;
+    --amarillo-main : rgb(255, 234, 0);
     --amarillo-enfasis : #826c00;
+
+    --placeholder-item : #646076;
 
     --gris : grey;
     --blanco : white;
@@ -17,25 +20,23 @@
 /******************************************************* GENERAL ******************************************************/
 
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Mukta", Arial, Helvetica, sans-serif;
     color: var(--blanco);
     text-decoration: none;
 }
 
 /******************************************************* BODY ******************************************************/
 
-body{ margin: 0; background-color: var(--background); }
+body{ margin: 0; }
 
 /******************************************************* DASHBOARD ******************************************************/
-
-/* @import './app/pages/dashboard/dashboard.component.css'; */
 
 /* margen para las divisiones left y right, las separa del borde y entre ellas */
 .left-dashboard, .dashboard-container .right-dashboard { margin: 1vh 2vw; }
 
 /* gap y alineación para los containers left-right y subcontainers */
 .left-dashboard, .left-dashboard .container,
-.right-dashboard, .right-dashboard .container 
+.right-dashboard, .right-dashboard .container
 {
     gap: 2vh 2vw;
     justify-content: center;
@@ -47,21 +48,20 @@ body{ margin: 0; background-color: var(--background); }
 /* IMAGENES */
 
 .img-container { /* el container de las fotos/miniaturas de las apps */
-    display: flex !important; 
+    display: flex !important;
 }
 
-.img-container .img-logo-full /* estilos para las fotos/miniaturas de apps */  
-{ 
+.img-container .img-logo-full /* estilos para las fotos/miniaturas de apps */
+{
     /* dimensiones */
-    height: 100% !important; width: 100% !important; 
+    height: 100% !important; width: 100% !important;
     min-height: 100% !important; min-width: 100% !important;
 
     object-fit: cover; /* para que no se distorsionen al redimensionarse */
 
     border-radius: 2vh; /* borde */
 
-    transition: ease-in-out 250ms 50ms;
-
+    transition: ease-in-out 200ms 50ms;
 }
 
 .dashboard-items-container /* items que contienen otros items */
@@ -76,19 +76,18 @@ body{ margin: 0; background-color: var(--background); }
     height: 10vh; max-width: 100%; /* dimensiones */
     border-radius: 2vh; /* borde */
     align-content: space-around; align-self: center; /* alineación */
-
 }
 
 .section-container{
     display: grid !important;
-    border: none !important; 
+    border: none !important;
 }
 
 
 .img-nofull{
     align-self: flex-end;
     /* dimensiones */
-    height: 100% !important; width: 100% !important; 
+    height: 100% !important; width: 100% !important;
     min-height: 50% !important; min-width: 100% !important;
     max-height: 100% !important;
 
@@ -101,7 +100,7 @@ body{ margin: 0; background-color: var(--background); }
 
 /* IZQUIERDA */
 
-.left-dashboard 
+.left-dashboard
 {
     /* ocupa 2 de 5 columnas */
     grid-column-start: 1;
@@ -111,9 +110,9 @@ body{ margin: 0; background-color: var(--background); }
     grid-template-columns: repeat(2, 1fr);
 }
 
-.left-dashboard .dashboard-items-container /* items que contienen otros items */ 
-{ 
-    background-color: var(--item-background);
+.left-dashboard .dashboard-items-container /* items que contienen otros items */
+{
+    background-color: var(--item-background-semitransparent);
     padding: 2vh 1vw;
 }
 
@@ -123,9 +122,13 @@ body{ margin: 0; background-color: var(--background); }
     background-color: transparent; /* background */
 }
 
+.left-dashboard .greeting-area {
+  padding: 3vh 1vw;
+}
+
 /* DERECHA */
 
-.right-dashboard 
+.right-dashboard
 {
     /* ocupa 3 de 5 columnas */
     grid-column-start: 3;
@@ -137,8 +140,8 @@ body{ margin: 0; background-color: var(--background); }
 
 .right-dashboard .dashboard-items-container /* items que contienen otros items */
 {
-    background-color: var(--item-background);
-    border: solid var(--item-background) 15px; border-radius: 2vh;
+    background-color: var(--item-background-semitransparent);
+    /* border: solid var(--item-background) 15px; */ border-radius: 2vh;
 }
 
 .right-dashboard .container .item /* items individuales */
@@ -147,44 +150,50 @@ body{ margin: 0; background-color: var(--background); }
     background-color: var(--subitem-background); /* background */
 }
 
+/* red social */
+
 .red-social{
     overflow: auto; /* overflow: que no se pase del container */
-    height: 50vh; 
-    background-image: url(assets/img/ciudad-artes-ciencias.avif); 
+    height: 75vh;
+/*     background-image: url(assets/img/ciudad-artes-ciencias.avif); */
     background-size: cover;
     column-gap: 0.5vw;
     padding: 2vh 1vw;
+    border-radius: 2.75vh !important;
 }
 
 .red-social h2, .red-social .section-header i{
     font-size: 2.75vh; padding: 0 0.5vw; margin: 0;
 }
 
+.red-social h3{ font-size: 1.8vh;}
+
 .red-social form{
     justify-items: center;
+    justify-self: center;
     max-height: 100%; width: 100%; max-width: 100%;
-    padding: 1vh 2vw;
 }
 
 .red-social form .section-header{
-    display: flex !important; 
+    display: flex !important;
     align-items: center; justify-content: space-between;
 }
 
 .red-social form label{
     align-items: center;
-    font-size: 1.5vh;
+    font-size: 1vw;
     padding: 0;
-    margin: 0.5vh 1vw;
+    margin: 1vh 1vw 0vh 1vw;
 }
 
 .red-social form select, .red-social form input{
 
-    width: 100%;
-    padding: 0.5vh 0.5vw;
+    display: flex !important; align-items: center !important;
+    width: fit-content; height: 4vh;
+    padding: 0.25vh 0.5vw;
     margin: 1vh;
 
-    font-size: 1.5vh; 
+    font-size: 1.5vh;
     color: var(--amarillo-main);
 
     border: solid transparent 0.2vw;
@@ -194,13 +203,10 @@ body{ margin: 0; background-color: var(--background); }
     backdrop-filter: blur(5px);
 }
 
-.red-social form textarea{
-    resize: vertical;
-    min-height: 5vh; max-height: 10vh;
-    max-width: 100%;
+.red-social form .nombreEvento, .red-social form textarea{
     padding: 0.5vh 0.5vw;
 
-    font-size: 1.5vh; 
+    font-size: 1.5vh;
     color: var(--amarillo-main);
 
     border: solid transparent 0.2vw;
@@ -209,13 +215,16 @@ body{ margin: 0; background-color: var(--background); }
     background-color: var(--item-background);
 }
 
-.red-social .img-container{
-   padding: 1vw;
+.red-social form textarea{
+    resize: vertical;
+    min-height: 5vh; max-height: 15vh;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .red-social .img-link-seccion{
     /* dimensiones */
-    height: 75% !important; width: 100% !important; 
+    height: 60vh !important; width: 100% !important;
 
     object-fit: cover; /* para que no se distorsionen al redimensionarse */
 
@@ -226,10 +235,13 @@ body{ margin: 0; background-color: var(--background); }
 
  .red-social .button{
     width: 5vw; min-width: fit-content;
-    transition: ease-in 150ms 0.5ms; 
+    transition: ease-in 150ms 0.5ms;
     font-weight: 700;
  }
 
+ .red-social *::placeholder{
+    color: var(--placeholder-item);
+ }
 
 /* hovers */
 
@@ -243,18 +255,13 @@ body{ margin: 0; background-color: var(--background); }
 
 .right-dashboard .img-container:active .img-logo-full{transition: ease-in 100ms 2ms;}
 
-.red-social .img-link-seccion:hover{filter: drop-shadow(0 5px 10px var(--item-background));}
+.red-social .img-link-seccion:hover{filter: drop-shadow(0 5px 10px var(--amarillo-main));}
 
-.red-social .button:hover{ 
-    background-color: var(--amarillo-main); color: var(--item-background); 
+.red-social .button:hover{
+    background-color: var(--amarillo-main); color: var(--item-background);
     box-shadow: -0.2vw 0.2vw var(--subitem-background);
 }
 .red-social .button:active{ background-color: var(--amarillo-enfasis); }
 
+
 /***************************************************** FIN DASHBOARD **************************************************/
-
-
-/******************************************************* FOOTER ******************************************************/
-
-footer{ display: flex; justify-content: center; align-items: center; }
-footer p{ color:#ffcd07;font-size: 1.5vh; }
