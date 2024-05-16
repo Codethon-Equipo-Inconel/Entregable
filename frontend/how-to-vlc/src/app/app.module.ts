@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -16,6 +16,11 @@ import { GalleryComponent } from './pages/eventos/componentes/gallery/gallery.co
 import { LocalidadesServicesService } from './services/localidades-services.service';
 import { RegisterComponent } from './pages/register/register.component';
 import { GradientComponent } from './components/gradient/gradient.component';
+import { EventoComponent } from './pages/eventos/componentes/evento/evento.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -31,11 +36,14 @@ import { GradientComponent } from './components/gradient/gradient.component';
     GalleryComponent,
     RegisterComponent,
     GradientComponent,
+    EventoComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [LocalidadesServicesService],
   bootstrap: [AppComponent]

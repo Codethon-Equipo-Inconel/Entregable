@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GalleryComponent } from './gallery.component';
+import { EventoComponent } from './evento.component';
 
-describe('GalleryComponent', () => {
-  let component: GalleryComponent;
-  let fixture: ComponentFixture<GalleryComponent>;
+describe('EventoComponent', () => {
+  let component: EventoComponent;
+  let fixture: ComponentFixture<EventoComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GalleryComponent]
+      declarations: [EventoComponent]
     });
-    fixture = TestBed.createComponent(GalleryComponent);
+    fixture = TestBed.createComponent(EventoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

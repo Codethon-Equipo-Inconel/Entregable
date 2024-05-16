@@ -1,70 +1,54 @@
-<!-- Main -->
-<main id="main" class="flexbox-col-start-center">
+<div class="container top-profile">
 
-    <!-- Profile Page -->
-    <div class="view-width">
-  
-      <!-- Profile Header -->
-      <section class="profile-header">
-        <div class="profile-header-inner flexbox">
-          <div class="phi-info-wrapper flexbox">
-            <div class="phi-info-left flexbox">
-              <!-- Profile Picture -->
-              <div class="phi-profile-picture-wrapper">
-                <div class="phi-profile-picture-inner flexbox">
-                  <img class="phi-profile-picture" src="../../assets/img/mondongo.png" alt="">
-                </div>
-              </div>
-              <!-- Profile Username -->
-              <div class="phi-profile-username-wrapper flexbox-col-left">
-                <h3 class="phi-profile-username flexbox">Usuario<span class="material-icons-round">verficado</span><i class="fa-solid fa-check"></i></h3>
-                <p class="phi-profile-tagline">Akuarela playa</p>
-              </div>
-            </div>
-            <div class="phi-info-right flexbox-right">
-              <div>
-                <button type="button" class="btn-primary-gray button btn-primary flexbox">
-                    <i class="fa-solid fa-heart"></i>Seguir<div class="btn-secondary"></div>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="profile-header-overlay"></div>
-          <img class="profile-header-image" src="../../assets/img/artes-y-ciencias.jpg" alt="">
-        </div>
-      </section>
-  
-      <!-- Profile Page -->
-      <section class="profile-page">
-        <h3>Eventos subidos</h3>
-
-        <div class="container">
-          <div class="image">
-            <a href=""><img src="../../assets/img/akuarela-perfil.jpg"/></a>
-          </div>
-          <div class="image">
-            <a href=""><img src="../../assets/img/akuarela-perfil.jpg"/></a>
-          </div>
-          <div class="image">
-            <a href=""><img src="../../assets/img/akuarela-perfil.jpg"/></a>
-          </div>
-        </div>
-
-        <div class="container">
-          <div class="image">
-            <a href=""><img src="../../assets/img/akuarela-perfil.jpg"/></a>
-          </div>
-          <div class="image">
-            <a href=""><img src="../../assets/img/akuarela-perfil.jpg"/></a>
-          </div>  
-          <div class="image">
-            <a href=""><img src="../../assets/img/akuarela-perfil.jpg"/></a>
-          </div>
-        </div>
-
-      </section>
-  
+  <div class="profile-section profile-image-section col-3">
+    <div class="profile-image-container">
+      <img class="profile-image col-9" src="assets/img/foto-perfil.jpg" alt="Profile image">
     </div>
-  
-  </main>
+  </div>
+
+  <div class="profile-section username-section col-9">
+
+    <h2 class="user-name"> {{ nombreUsuario }} <i class="bi-person-check"></i> </h2> 
+    <h2 class="username"> @{{ username }} </h2>
+
+    <!-- todo: conecta el servicio de auth -->
+  </div>
+
+</div>
+
+<div class="container profile-posts">
+
+  <h2>Eventos publicados por ti</h2>
+  <div class="row posts-container">
+
+    <div class="post-container col-lg-4 col-md-6 col-sm-12">
+      
+      <img class="img-fluid" [src]="fotosEventos.images[1].url" alt="">
+      <div class="caption">
+        <h3>¡¡Semana Santa 2024!!</h3> 
+        <p>Antes del verano llega: ¡LA SEMANA SANTA! Este jueves 28 de marzo(...)</p>
+      </div>
+      
+    </div>
+
+    <div class="post-container col-lg-4 col-md-6 col-sm-12">
+      <img class="img-fluid" [src]="fotosEventos.images[2].url" alt="">
+      <div class="caption">
+        <h3>SO(FO)CCO Jávea!</h3>
+        <p>Prepárate para la noche más candente de Valencia con Sofoco! Este lunes(...)</p>
+      </div>
+    </div>
+
+    <div class="post-container col-lg-4 col-md-6 col-sm-12">
+      <img class="img-fluid" [src]="fotosEventos.images[3].url" alt="">
+      <div class="caption">
+        <h3>Llega JÁVEA VIVEZ!</h3>
+        <p>¿Estáis preparados para la innauguración? ¡Ya están las entradas a la venta a través(...)</p>
+      </div>
+    </div>
+    
+
+  </div>
+
+
+</div>

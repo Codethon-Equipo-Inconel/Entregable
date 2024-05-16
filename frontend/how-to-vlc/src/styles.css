@@ -1,28 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
-
 /******************************************************* COLORES ******************************************************/
 
 :root{ /* ¡¡IMPORTANTE!! Variables para los colores, usar estas y añadir colores aquí */
-    --background : #080735;
-    --item-background-semitransparent : hsla(258, 48%, 19%, 0.6);
-    --item-background : #271948;
-    --subitem-background : #271948a1;
+  --background : #080735;
+  --item-background-semitransparent : hsla(258, 48%, 19%, 0.6);
+  --item-background : #271948;
+  --subitem-background : #271948a1;
+  --background-evento : #080735ec;
 
-    --amarillo-main : rgb(255, 234, 0);
-    --amarillo-enfasis : #826c00;
+  --amarillo-main : rgb(255, 234, 0);
+  --amarillo-enfasis : #826c00;
 
-    --placeholder-item : #646076;
+  --placeholder-item : #646076;
 
-    --gris : grey;
-    --blanco : white;
+  --gris : grey;
+  --blanco : white;
+
+  --boton-hover : rgba(255, 255, 255, 0.3);
 }
 
 /******************************************************* GENERAL ******************************************************/
 
 *{
-    font-family: "Mukta", Arial, Helvetica, sans-serif;
-    color: var(--blanco);
-    text-decoration: none;
+  font-family: "Mukta", Arial, Helvetica, sans-serif;
+  color: var(--blanco);
+  text-decoration: none !important;
 }
 
 /******************************************************* BODY ******************************************************/
@@ -38,9 +39,9 @@ body{ margin: 0; }
 .left-dashboard, .left-dashboard .container,
 .right-dashboard, .right-dashboard .container
 {
-    gap: 2vh 2vw;
-    justify-content: center;
-    min-height: fit-content;
+  gap: 2vh 2vw;
+  justify-content: center;
+  min-height: fit-content;
 }
 
 /* estilos para items del dashboard */
@@ -48,54 +49,53 @@ body{ margin: 0; }
 /* IMAGENES */
 
 .img-container { /* el container de las fotos/miniaturas de las apps */
-    display: flex !important;
+  display: flex !important;
 }
 
 .img-container .img-logo-full /* estilos para las fotos/miniaturas de apps */
 {
-    /* dimensiones */
-    height: 100% !important; width: 100% !important;
-    min-height: 100% !important; min-width: 100% !important;
+  /* dimensiones */
+  height: 100% !important; width: 100% !important;
+  min-height: 100% !important; min-width: 100% !important;
 
-    object-fit: cover; /* para que no se distorsionen al redimensionarse */
+  object-fit: cover; /* para que no se distorsionen al redimensionarse */
 
-    border-radius: 2vh; /* borde */
+  border-radius: 2vh; /* borde */
 
-    transition: ease-in-out 200ms 50ms;
+  transition: ease-in-out 200ms 50ms;
 }
 
 .dashboard-items-container /* items que contienen otros items */
 {
-    min-width: fit-content; /* dimensiones */
-    border-radius: 2vh; /* borde */
-    padding: 0.5vh 0vw; /* separaciones */
+  min-width: fit-content; /* dimensiones */
+  border-radius: 2vh; /* borde */
+  padding: 0.5vh 0vw; /* separaciones */
 }
 
 .container .item /* items individuales */
 {
-    height: 10vh; max-width: 100%; /* dimensiones */
-    border-radius: 2vh; /* borde */
-    align-content: space-around; align-self: center; /* alineación */
+  height: 10vh; max-width: 100%; /* dimensiones */
+  border-radius: 2vh; /* borde */
+  align-content: space-around; align-self: center; /* alineación */
 }
 
 .section-container{
-    display: grid !important;
-    border: none !important;
+  display: grid !important;
+  border: none !important;
 }
 
-
 .img-nofull{
-    align-self: flex-end;
-    /* dimensiones */
-    height: 100% !important; width: 100% !important;
-    min-height: 50% !important; min-width: 100% !important;
-    max-height: 100% !important;
+  align-self: flex-end;
+  /* dimensiones */
+  height: 100% !important; width: 100% !important;
+  min-height: 50% !important; min-width: 100% !important;
+  max-height: 100% !important;
 
-    object-fit: cover; /* para que no se distorsionen al redimensionarse */
+  object-fit: cover; /* para que no se distorsionen al redimensionarse */
 
-    border-radius: 2vh; /* borde */
+  border-radius: 2vh; /* borde */
 
-    transition: ease-in-out 50ms 50ms;
+  transition: ease-in-out 50ms 50ms;
 }
 
 /* IZQUIERDA */
@@ -253,9 +253,9 @@ body{ margin: 0; }
 .red-social .img-link-seccion:active
 { transform: scale(1%) !important; transition: ease-in 50ms 1ms; }
 
-.right-dashboard .img-container:active .img-logo-full{transition: ease-in 100ms 2ms;}
+.right-dashboard .img-container:active .img-logo-full{ transition: ease-in 100ms 0.5ms; }
 
-.red-social .img-link-seccion:hover{filter: drop-shadow(0 5px 10px var(--amarillo-main));}
+.red-social .img-link-seccion:hover{ filter: drop-shadow(0 5px 10px var(--amarillo-main)); }
 
 .red-social .button:hover{
     background-color: var(--amarillo-main); color: var(--item-background);

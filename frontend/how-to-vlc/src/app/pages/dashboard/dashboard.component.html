@@ -5,7 +5,8 @@
 
     <article class="greeting-area dashboard-item container item full-size">
 
-      <h2>Bon dia, John Doe!</h2>
+      <h2 *ngIf="isAuthenticated">Bon dia, {{ nombreUsuario }}!</h2>
+      <h2 *ngIf="!isAuthenticated">Bon dia!</h2>
 
     </article>
 
@@ -97,51 +98,6 @@
 
     </article>
 
-    <!-- desactivado de momento: espacio libre2
-    <article class="dashboard-item dashboard-items-container container full-size four-items item">
-
-      <a class="dashboard-item item img-container">
-        <img src="assets/img/logos-apps/metrovalencia.png" alt="libre" class="img-logo-full">
-      </a>
-
-      <a class="dashboard-item item img-container">
-        <img src="assets/img/logos-apps/metrovalencia.png" alt="libre" class="img-logo-full">
-      </a>
-
-      <a class="dashboard-item item img-container">
-        <img src="assets/img/logos-apps/metrovalencia.png" alt="libre" class="img-logo-full">
-      </a>
-
-      <a class="dashboard-item item img-container">
-        <img src="assets/img/logos-apps/metrovalencia.png" alt="libre" class="img-logo-full">
-      </a>
-
-    </article>
-
-    espacio libre3
-    <article class="dashboard-item dashboard-items-container container one-item">
-
-      <a class="dashboard-item item img-container">
-        <img src="assets/img/logos-apps/metrovalencia.png" alt="rutas" class="img-logo-full">
-      </a>
-
-    </article>
-
-    espacio libre4
-    <article class="dashboard-item two-items container">
-
-      <a class="dashboard-item one-item item img-container">
-        <img src="assets/img/logos-apps/metrovalencia.png" alt="libre1" class="img-logo-full">
-      </a>
-
-      <a class="dashboard-item one-item item img-container">
-        <img src="assets/img/logos-apps/metrovalencia.png" alt="libre2" class="img-logo-full">
-      </a>
-
-    </article>
-
-    -->
-
   </section>
 
   <!-- parte derecha del dashboard -->
@@ -191,7 +147,7 @@
           <h2>¿Dónde $#!% está la gente?</h2>
           <h3>¡Descubre los eventos próximos y entérate!</h3>
         </div>
-        <img [src]="fotosEventos.images[0].url" alt="eventos" class="img-link-seccion">
+        <img [src]="fotosEventos.images[1].url" alt="eventos" class="img-link-seccion">
       </a>
 
     </article>
